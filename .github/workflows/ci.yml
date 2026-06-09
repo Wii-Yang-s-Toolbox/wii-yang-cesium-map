@@ -1,0 +1,23 @@
+name: 部署
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
+
+      - name: 使用 Dockerfile 打包
+        run: docker buildx build --output type=local,dest=. .
+
+      - name: 部署
+        run: |
+          mkdir -p /var/www/cesium-map
+          rm -rf /var/www/cesium-map/*
+          cp -r dist/* /var/www/cesium-map/
