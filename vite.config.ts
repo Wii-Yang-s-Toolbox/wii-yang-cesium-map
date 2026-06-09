@@ -1,0 +1,40 @@
+import { fileURLToPath, URL } from 'node:url'
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import cesium from 'vite-plugin-cesium'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
+
+export default defineConfig({
+  plugins: [
+    vue(),
+    cesium({ cesiumBaseUrl: '/cesium/' }),
+    AutoImport({
+      resolvers: [AntDesignVueResolver()],
+      dts: './types/auto-imports.d.ts',
+    }),
+    Components({
+      resolvers: [AntDesignVueResolver()],
+      dts: './types/components.d.ts',
+    }),
+  ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@types': fileURLToPath(new URL('./types', import.meta.url)),
+    },
+  },
+  server: {
+    host: true,
+    port: 5000,
+    open: false,
+    proxy: {
+      '/tdt': {
+        target: 'https://t0.tianditu.gov.cn',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/tdt/, ''),
+      },
+    },
+  },
+})
