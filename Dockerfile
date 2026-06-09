@@ -1,5 +1,5 @@
 # 声明全局参数
-ARG version='lts-alpine3.22'
+ARG version='lts'
 
 # === 第一阶段：构建并打包 ===
 FROM node:${version} AS builder
