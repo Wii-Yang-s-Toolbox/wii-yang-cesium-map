@@ -30,10 +30,11 @@ onMounted(async () => {
   viewer.imageryLayers.addImageryProvider(
     new Cesium.WebMapTileServiceImageryProvider({
       url: `/tdt/img_w/wmts?tk=${tdtToken}`,
+      format: 'tiles',
       layer: 'img',
       style: 'default',
-      format: 'tiles',
       tileMatrixSetID: 'w',
+      maximumLevel: 18,
     }),
   )
 
@@ -44,13 +45,13 @@ onMounted(async () => {
       style: 'default',
       format: 'tiles',
       tileMatrixSetID: 'w',
+      maximumLevel: 18,
     }),
   )
 
   viewer.camera.setView({
     destination: Cesium.Cartesian3.fromDegrees(110, 35, 12000000),
   })
-
 
   viewer.camera.flyTo({
     destination: Cesium.Cartesian3.fromDegrees(104.49531490292091, 24.965421496782675, 3000),
@@ -71,10 +72,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div
-    ref="mapContainer"
-    class="cesium-map"
-  />
+  <div ref="mapContainer" class="cesium-map" />
 </template>
 
 <style scoped>

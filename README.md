@@ -30,14 +30,14 @@ pnpm dev
 
 ## 可用命令
 
-| 命令                   | 说明 |
-|----------------------|------|
+| 命令                 | 说明                        |
+| -------------------- | --------------------------- |
 | `pnpm run dev`       | 启动开发服务器（端口 5000） |
-| `pnpm run build`     | 类型检查 + 生产构建 |
-| `pnpm run preview`   | 预览生产构建 |
-| `pnpm run lint`      | ESLint 检查 |
-| `pnpm run format`    | Prettier 格式化 |
-| `pnpm run typecheck` | TypeScript 类型检查 |
+| `pnpm run build`     | 类型检查 + 生产构建         |
+| `pnpm run preview`   | 预览生产构建                |
+| `pnpm run lint`      | ESLint 检查                 |
+| `pnpm run format`    | Prettier 格式化             |
+| `pnpm run typecheck` | TypeScript 类型检查         |
 
 ## 项目结构
 
@@ -81,6 +81,6 @@ docker build --build-arg version=24.16.0 --output type=local,dest=. .
 
 ## 环境变量
 
-| 变量 | 说明 | 必填 |
-|------|------|------|
-| `VITE_TDT_TOKEN` | 天地图开发者 Token | 是 |
+| 变量             | 说明               | 必填 |
+| ---------------- | ------------------ | ---- |
+| `VITE_TDT_TOKEN` | 天地图开发者 Token | 是   |
