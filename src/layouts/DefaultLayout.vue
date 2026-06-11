@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import CesiumMap from '@/components/CesiumMap.vue'
+import CesiumMap from '@/components/CesiumMap/index.vue'
 
 defineOptions({ name: 'DefaultLayout' })
 </script>

@@ -55,7 +55,7 @@ src/
 └── style.css
 
 types/                 # TypeScript 类型声明
-.env                   # 环境变量（不提交）
+.env                   # 环境变量
 Dockerfile             # Docker 构建
 ```
 

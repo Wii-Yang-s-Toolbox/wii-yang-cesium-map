@@ -35,6 +35,7 @@ onMounted(async () => {
       style: 'default',
       tileMatrixSetID: 'w',
       maximumLevel: 18,
+      enablePickFeatures: false,
     }),
   )
 
@@ -46,6 +47,7 @@ onMounted(async () => {
       format: 'tiles',
       tileMatrixSetID: 'w',
       maximumLevel: 18,
+      enablePickFeatures: false,
     }),
   )
 
@@ -79,11 +81,5 @@ onUnmounted(() => {
 .cesium-map {
   width: 100%;
   height: 100%;
-}
-</style>
-
-<style>
-.cesium-viewer-bottom {
-  display: none !important;
 }
 </style>

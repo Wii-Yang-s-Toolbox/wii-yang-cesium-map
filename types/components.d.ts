@@ -11,7 +11,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    CesiumMap: typeof import('./../src/components/CesiumMap.vue')['default']
+    CesiumMap: typeof import('./../src/components/CesiumMap/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
