@@ -32,9 +32,8 @@ export default defineConfig({
     open: false,
     proxy: {
       '/tdt': {
-        target: 'https://t0.tianditu.gov.cn',
+        target: 'https://wii-yang.cn',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/tdt/, ''),
       },
     },
   },
