@@ -9,7 +9,9 @@ WORKDIR /app
 COPY . .
 
 # 2. 独立执行安装
-RUN npm install -g pnpm \
+RUN npm config set registry https://registry.npmmirror.com \
+    && npm install -g pnpm \
+    && pnpm config set registry https://registry.npmmirror.com \
     && pnpm install \
     && pnpm run build
 
