@@ -13,6 +13,11 @@ jobs:
       - name: 拉取代码
         uses: actions/checkout@v4
 
+      - name: 创建环境变量
+        run: |
+          echo "VITE_CESIUM_TOKEN=${{ secrets.VITE_CESIUM_TOKEN }}" >> .env.local
+          echo "VITE_TDT_TOKEN=${{ secrets.VITE_TDT_TOKEN }}" >> .env.local
+
       - name: 使用 Dockerfile 打包
         run: docker buildx build --build-arg version=24.16.0 --output type=local,dest=. .
 
