@@ -8,6 +8,8 @@ defineOptions({ name: 'CesiumMap' })
 const mapContainer = ref<HTMLDivElement | null>(null)
 let viewer: InstanceType<typeof import('cesium').Viewer> | null = null
 
+Cesium.Ion.defaultAccessToken = import.meta.env.VITE_CESIUM_TOKEN
+
 onMounted(async () => {
   const tdtToken = import.meta.env.VITE_TDT_TOKEN
 

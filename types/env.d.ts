@@ -8,6 +8,7 @@ declare module '*.vue' {
 
 interface ImportMetaEnv {
   readonly VITE_TDT_TOKEN: string
+  readonly VITE_CESIUM_TOKEN: string
 }
 
 interface ImportMeta {
